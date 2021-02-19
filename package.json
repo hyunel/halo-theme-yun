@@ -1,0 +1,18 @@
+{
+  "name": "halo-theme-yun",
+  "version": "1.0.0",
+  "scripts": {
+    "watch": "sass --watch source/css/style.scss:source/css/style.css",
+    "webpack": "webpack",
+    "sass": "sass source/css/style.scss source/css/style.css",
+    "dev": "java11.lnk -jar %USERPROFILE%/halo-dev/halo-1.4.5.jar --spring.profiles.active=dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hyun",
+  "devDependencies": {
+    "sass": "^1.32.7",
+    "webpack": "^5.23.0",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {}
+}

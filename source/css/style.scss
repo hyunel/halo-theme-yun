@@ -1,0 +1,37 @@
+// bp-xl: card-vertical
+// bp-l: no-side
+// bp-m: padding less, small tittle 
+
+$bp-m: 480px;
+$bp-l: 690px;
+$bp-xl: 900px;
+$bp-xxl: 1200px;
+
+@import './sass/common.scss';
+
+// pages
+@import 'sass/page-index.scss';
+
+
+// modules
+@import 'sass/module/pagination.scss';
+@import 'sass/module/footer.scss';
+
+:root {
+    --theme-color: #A05E68;
+}
+
+body {
+    margin: 0;
+    font-family: "Century Gothic", 'Lato', 'Microsoft YaHei', 'SimHei', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    transition: all .15s linear;
+
+    &:hover {
+        color: var(--theme-color);
+    }
+}
+

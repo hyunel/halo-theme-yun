@@ -1,0 +1,65 @@
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.limit-more-line {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+.num-block {
+    display: inline-block;
+    text-align: center;
+    width: 35px;
+    margin: 10px 0;
+
+    div:first-child {
+        color: #888888;
+        font-size: 14px;
+    }
+    div:nth-child(2) {
+        font-size: 20px;
+        margin-top: 5px;
+        font-weight: bold;
+    }
+}
+
+.line-center {
+    display: flex;
+    align-items: center;
+}
+
+.space-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+.color-theme {
+    color: var(--theme-color);
+}
+
+@media (max-width: $bp-l) {
+    .auto-hide {
+        display: none !important;
+    }
+}
+
+.card {
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 6px rgb(7 17 27 / 6%);
+    margin-bottom: 15px;
+
+    transition: box-shadow .3s ease;
+    overflow: hidden;
+
+    &:hover {
+        box-shadow: 0 4px 12px 12px rgb(7 17 27 / 15%);
+    }
+}
