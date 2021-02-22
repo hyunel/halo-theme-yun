@@ -286,4 +286,11 @@
     
 <div class="toTop"></div>
 
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/wordcloud@1.1.2/src/wordcloud2.min.js"></script>
+<script src="${theme_base!}/source/js/index.js"></script>
+<script src="${theme_base!}/source/js/iconfont.js"></script>
+
 </@layout>

@@ -1,6 +1,6 @@
 $nav-height: 60px;
-$cover-height: calc(100vh);
-
+// $cover-height: calc(100vh);
+$cover-height: var(--vh);
 
 .container--top {
     &.hide {
@@ -72,12 +72,12 @@ $cover-height: calc(100vh);
 
 
 .cover {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+    position: relative;
     background-attachment: fixed;
     background-image: url('../images/bg-cover.jpg');
     background-repeat: repeat;
@@ -96,6 +96,13 @@ $cover-height: calc(100vh);
     z-index: 999;
 
     .cover-tittle {
+
+        position: absolute;
+
+        bottom: 0;
+        left: 0;
+        // bottom: calc(#{$cover-height}/2 + 10px);
+
         font-size: 40px;
         font-weight: normal;
         letter-spacing: 8px;
