@@ -7,7 +7,6 @@ toastr.options = {
     "timeOut": "1000",
 }
 
-
 function numberFormatter(input, type) {
     function yunRound(value, n) {
         return Math.round(value*Math.pow(10,n))/Math.pow(10,n);
@@ -82,10 +81,13 @@ function toggleAnime(toggle) {
 class yunNav {
     constructor() {
         this.lastScroll = 0;
+        this.container = $('.container');
+
         $(window).scroll(() => { this.onScroll(); });
 
         const navbar = $('.navbar-item');
         
+        // 导航条移动端 toggle 点击事件
         $(".navbar-toggler").click(function(event){
             const toggle = navbar.hasClass('active');
 
@@ -98,9 +100,11 @@ class yunNav {
             toggleAnime(toggle);
             event.stopPropagation();//阻止冒泡
         });
-        $("body").click(function(){
-            const toggle = navbar.hasClass('active');
-            if(toggle) navbar.removeClass('active');
+
+        // 自动隐藏 导航条 侧边栏
+        $("body").click(()=>{
+            if(navbar.hasClass('active')) navbar.removeClass('active');
+            if(this.container.hasClass('sidebar')) this.container.removeClass('sidebar');
         });
     }
 
@@ -121,9 +125,9 @@ class yunNav {
         }
 
         if(top > this.lastScroll && !('is_index' in window) && !is_mobile && scrollHeight > 200 && false) {
-            $('.container').addClass('hide');
+            this.container.addClass('hide');
         } else {
-            $('.container').removeClass('hide');
+            this.container.removeClass('hide');
         }
 
         this.lastScroll = top;
@@ -131,3 +135,7 @@ class yunNav {
 }
 
 new yunNav();
+
+$('.theme-config').click(function() {
+    $('.float-bar').toggleClass('config');
+});

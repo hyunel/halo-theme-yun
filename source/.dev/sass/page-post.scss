@@ -1,11 +1,5 @@
 $sidebar-width: 20%;
 
-footer {
-    @media (max-width: $bp-xl) {
-        padding-left: 20px !important;
-    }
-}
-
 .post-content {
     width: calc(#{100%-$sidebar-width} - 30px);
     margin-left: $sidebar-width;
@@ -23,7 +17,7 @@ footer {
 
         // 有效避免背景白色导致看不清
         text-shadow: 1px 1px 2px black;
-        background-image: url('../images/bg-cover.jpg');
+        
         background-repeat: no-repeat;
         background-size: cover;
         
@@ -162,6 +156,9 @@ footer {
         background-color: #252525b0;
         backdrop-filter:blur(1px);
         z-index: 99;
+        left: -999px;
+        will-change: left;
+        transition: left 0.3s ease;
         
         .card {
             color: white;
@@ -192,6 +189,21 @@ footer {
         }
         .post-content {
             margin-top: 15px;
+        }
+    }
+
+    .toggle-sidebar {
+        transform: rotate(180deg);
+        transition: transform 0.2s ease;
+    }
+
+    &.sidebar {
+        .toggle-sidebar {
+            transform: rotate(0deg);
+        }
+
+        .post-sidebar {
+            left: 0;
         }
     }
 }

@@ -105,3 +105,71 @@
         will-change: width;
     }
 }
+
+.float-bar {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+
+    display: flex;
+    // visibility: hidden;
+    flex-direction: column;
+
+    .float-item {
+        display: inline-block;
+        height: 36px;
+        width: 36px;
+
+        color: white;
+        opacity: 0.8;
+        background-color: #{'rgb(var(--theme-color))'};
+
+        margin-bottom: 6px;
+        border-radius: 3px;
+
+        text-align: center;
+        line-height: 36px;
+
+        transition: opacity 0.2s ease, right 0.3s ease;
+        cursor: pointer;
+        
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .theme-config {
+        svg {
+            transition: transform 0.3s ease;
+        }
+        
+        &:hover svg {
+            transform: rotate(90deg);
+        }
+    }
+
+    .toggle-dark-mode {
+        .light {
+            display: none;
+        }
+    }
+
+    
+    // 特殊情况类
+    .config-mode {
+        position: relative;
+        right: -99px;
+    }
+
+    &.config .config-mode {
+        right: 0px;
+    }
+
+    .float-bar-hide-xl {
+        display: none;
+
+        @media (max-width: $bp-xl) {
+            display: block;
+        }
+    }
+}

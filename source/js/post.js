@@ -36,6 +36,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     timeCounter(0);
+
+    // floatbar 点击事件
+    $('.toggle-sidebar').click((e)=> {
+        $('.container').toggleClass('sidebar');
+        e.stopPropagation();
+    })
 });
 
 function loadToc(from, to, sec) {

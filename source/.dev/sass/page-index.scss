@@ -2,6 +2,10 @@
 $cover-height: var(--vh);
 
 .container--top {
+    // .float-bar {
+    //     visibility: visible;
+    // }
+
     &.hide {
         .cover {
             transform: translateY(-60px);

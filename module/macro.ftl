@@ -22,16 +22,21 @@
 </head>
 <body>
 
-<#if is_index??>
-    <#nested >
-<#else>
+
+<#if !is_index??>
     <div class="container container--top">
         <div class="cover"><#include "navbar.ftl"></div>
-        <#nested >
+</#if>
+
+<#nested >
+
+<#include "floatbar.ftl">
+<#include "footer.ftl">
+
+<#if !is_index??>
     </div>
 </#if>
 
-<#include "footer.ftl">
 </body>
 
 

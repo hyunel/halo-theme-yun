@@ -99,6 +99,55 @@
   animation: 0.3s linear 0s infinite alternate swiper;
 }
 
+.float-bar {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.float-bar .float-item {
+  display: inline-block;
+  height: 36px;
+  width: 36px;
+  color: white;
+  opacity: 0.8;
+  background-color: rgb(var(--theme-color));
+  margin-bottom: 6px;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 36px;
+  transition: opacity 0.2s ease, right 0.3s ease;
+  cursor: pointer;
+}
+.float-bar .float-item:hover {
+  opacity: 1;
+}
+.float-bar .theme-config svg {
+  transition: transform 0.3s ease;
+}
+.float-bar .theme-config:hover svg {
+  transform: rotate(90deg);
+}
+.float-bar .toggle-dark-mode .light {
+  display: none;
+}
+.float-bar .config-mode {
+  position: relative;
+  right: -99px;
+}
+.float-bar.config .config-mode {
+  right: 0px;
+}
+.float-bar .float-bar-hide-xl {
+  display: none;
+}
+@media (max-width: 900px) {
+  .float-bar .float-bar-hide-xl {
+    display: block;
+  }
+}
+
 .container--top.hide .cover {
   transform: translateY(-60px);
 }
@@ -508,12 +557,6 @@
   text-align: end;
 }
 
-@media (max-width: 900px) {
-  footer {
-    padding-left: 20px !important;
-  }
-}
-
 .post-content {
   width: calc(80% - 30px);
   margin-left: 20%;
@@ -528,7 +571,6 @@
   position: relative;
   margin-bottom: 16px;
   text-shadow: 1px 1px 2px black;
-  background-image: url("../images/bg-cover.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
@@ -643,6 +685,9 @@
     background-color: #252525b0;
     backdrop-filter: blur(1px);
     z-index: 99;
+    left: -999px;
+    will-change: left;
+    transition: left 0.3s ease;
   }
   .post-sidebar .card {
     color: white;
@@ -667,6 +712,16 @@
 }
 .container--top.hide .post-content {
   margin-top: 15px;
+}
+.container--top .toggle-sidebar {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease;
+}
+.container--top.sidebar .toggle-sidebar {
+  transform: rotate(0deg);
+}
+.container--top.sidebar .post-sidebar {
+  left: 0;
 }
 
 .post-wrapper {

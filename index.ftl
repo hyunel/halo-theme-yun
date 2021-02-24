@@ -13,15 +13,12 @@
             <#if posts?? && posts.getTotalElements() gt 0>
                 <#list posts.content as post>
                 <article class="card card-article">
+                    <#assign postimg=theme_base+'/source/images/bg-cover.jpg'/>
+                    <#if post.thumbnail?? && post.thumbnail!=''><#assign postimg=post.thumbnail /></#if>
 
-                <#if post.thumbnail?? && post.thumbnail!=''>
-                    <a href="${post.fullPath!}"><img src="${post.thumbnail!}" alt="bg"></a>
-                <#else>
-                    <a href="${post.fullPath!}"><img src="${theme_base!}/source/images/bg-cover.jpg" alt="bg"></a>
-                </#if>
-                    
+                    <a href="${post.fullPath!}"><img src="${postimg!}" alt="bg"></a>
                     <div class="in-card">
-                        <a class="in-card-tittle" href="${post.fullPath!}"><h3>${post.title}</h3></a>
+                        <a class="in-card-tittle" href="${post.fullPath!}"><h3>${post.title!}</h3></a>
                         <div class="in-card-meta">
                         <#if is_index?? && post.topPriority?? && post.topPriority gt 0>
                             <div class="in-card-meta-item top">
@@ -61,7 +58,7 @@
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-FontAwesomecommentdotssolid"></use>
                                 </svg>
-                                ${post.commentCount} 条评论
+                                ${post.commentCount!} 条评论
                             </div>
                             </#if>
                         </div>

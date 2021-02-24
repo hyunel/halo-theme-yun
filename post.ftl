@@ -37,7 +37,9 @@
 
         <div class="post-content">
             <div class="card card-post">
-                <div class="post-info">
+                <#assign postimg=theme_base+'/source/images/bg-cover.jpg'/>
+                <#if post.thumbnail?? && post.thumbnail!=''><#assign postimg=post.thumbnail /></#if>
+                <div class="post-info" style="background-image: url('${postimg!}');">
                     <span class="post-tittle">${post.title!}</span>
                     <div class="post-meta-group">
                         <div class="in-card-meta-item">
@@ -54,7 +56,7 @@
                         </div>
                         <div class="in-card-meta-item">
                             <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-time"></use>
+                                <use xlink:href="#icon-bi"></use>
                             </svg>
                             <span>总字数: <span class="count-all">0</span></span>
                         </div>
