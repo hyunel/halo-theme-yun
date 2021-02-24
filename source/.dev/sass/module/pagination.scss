@@ -53,14 +53,14 @@
   
     &:hover,
     &.current {
-        background-color: var(--theme-color);
+        background-color: #{'rgb(var(--theme-color))'};
         color: white;
     }
   
     &.prev:hover,
     &.next:hover {
         background-color: transparent;
-        color: var(--theme-color);
+        color: #{'rgb(var(--theme-color))'};
     }
 
     &.disable {

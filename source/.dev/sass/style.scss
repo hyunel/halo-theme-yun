@@ -7,18 +7,22 @@ $bp-l: 690px;
 $bp-xl: 900px;
 $bp-xxl: 1200px;
 
-@import './sass/common.scss';
+$nav-height: 60px;
+
+@import './common.scss';
 
 // pages
-@import 'sass/page-index.scss';
-
+@import 'page-index.scss';
+@import 'page-post.scss';
 
 // modules
-@import 'sass/module/pagination.scss';
-@import 'sass/module/footer.scss';
+@import 'module/pagination.scss';
+@import 'module/footer.scss';
+@import 'module/toastr.scss';
 
 :root {
-    --theme-color: #A05E68;
+    --theme-color: 160, 94, 104;
+    --theme-second-color: rgb(240, 240, 240);
     --vh: 80px;
 }
 
@@ -32,7 +36,7 @@ a {
     transition: all .15s linear;
 
     &:hover {
-        color: var(--theme-color);
+        color: #{'rgb(var(--theme-color))'};
     }
 }
 

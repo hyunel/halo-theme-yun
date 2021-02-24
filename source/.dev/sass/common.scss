@@ -41,7 +41,7 @@
 }
 
 .color-theme {
-    color: var(--theme-color);
+    color: #{'rgb(var(--theme-color))'};
 }
 
 @media (max-width: $bp-l) {
@@ -51,7 +51,6 @@
 }
 
 .card {
-    display: flex;
     border-radius: 8px;
     box-shadow: 0 4px 8px 6px rgb(7 17 27 / 6%);
     margin-bottom: 15px;
@@ -59,7 +58,50 @@
     transition: box-shadow .3s ease;
     overflow: hidden;
 
+    will-change: box-shadow;
+
     &:hover {
         box-shadow: 0 4px 12px 12px rgb(7 17 27 / 15%);
+    }
+}
+
+.content {
+    margin-top: $nav-height;
+    transition: margin-top 0.5s ease;
+}
+
+.processbar {
+    display: inline-flex;
+
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    
+    background-color: var(--theme-second-color);
+    // position: fixed;
+
+
+    @keyframes swiper {
+        from { transform: rotate(50deg) translateX(1px) translateY(-8px); }
+        50%  { transform: rotate(50deg) translateX(1px) translateY(-9px); }
+        to   { transform: rotate(50deg) translateX(1px) translateY(-7.5px); }
+    }
+
+    .processbar-process {
+        .icon {
+            float: right;
+            font-size: 20px;
+
+            animation: 0.3s linear 0s infinite alternate swiper;
+        }
+        width: 0;
+        height: 10px;
+
+        border-radius: 5px;
+        background-color: #{'rgb(var(--theme-color))'};
+        opacity: 0.8;
+        transition: width 0.3s ease;
+
+        will-change: width;
     }
 }

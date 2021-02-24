@@ -1,0 +1,424 @@
+$sidebar-width: 20%;
+
+footer {
+    @media (max-width: $bp-xl) {
+        padding-left: 20px !important;
+    }
+}
+
+.post-content {
+    width: calc(#{100%-$sidebar-width} - 30px);
+    margin-left: $sidebar-width;
+    margin-top: $nav-height + 15px;
+    
+    transition: margin-top 0.5s ease;
+    box-sizing: border-box;
+    
+    .post-info {
+        color: white;
+        height: 300px;
+        padding: 20px 20px 10px 20px;
+        position: relative;
+        margin-bottom: 16px;
+
+        // 有效避免背景白色导致看不清
+        text-shadow: 1px 1px 2px black;
+        background-image: url('../images/bg-cover.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        .post-tittle {
+            display: block;
+            text-align: left;
+            font-size: 20px;
+        }
+
+        .post-meta-group {
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            
+            text-align: end;
+            margin: 10px;
+
+            a:not(:hover) {
+                color: rgb(238, 238, 238);
+            }
+        }
+
+        .in-card-meta-item {
+            font-size: smaller;
+            display: inline-block;
+            margin-right: 10px;
+            // span {
+            //     color: #dbdbdb;
+            // }
+        }
+    }
+
+    @media (max-width: $bp-xl) {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 20px;
+    }
+}
+
+.card-post-widget {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-right: 15px;
+    padding: 10px;
+    
+    .in-widget-tittle {
+        font-size: 14px;
+        color: #4c4948;
+        margin-bottom: 8px;
+    }
+
+}
+
+.widget-post-index {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    .in-widget-content {
+        overflow-y: auto;
+        ul {
+            font-size: 12px;
+            list-style: none;
+            padding-left: 10px;
+            font-weight: normal;
+        }
+
+        li a {
+            cursor: pointer;
+            :not(:hover) {
+                color: black;
+            }
+        }
+
+        > ul > li {
+            font-size: 14px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        p {
+            color: #888888;
+            font-size: 16px;
+            text-align: center;
+        }
+
+    }
+    
+}
+
+.widget-post-count {
+    height: 140px;
+    .in-widget-content{
+        font-size: 12px;
+        p {
+            margin: 8px 0;
+            > span {
+                float: right;
+            }
+        }
+    
+        .processbar {
+            width: 100%;
+        }
+    }
+}
+
+.widget-post-comment {
+    padding: 10px;
+}
+
+.post-sidebar {
+    $top: $nav-height + 15px;
+
+    width: $sidebar-width;
+    height: calc(100% - #{$top});
+    
+    top: 0;
+    position: fixed;
+    padding-top: $top;
+
+    display: flex;
+    flex-direction:column;
+
+    overflow: hidden;
+
+    transition: padding-top 0.5s ease, height 0.2s ease;
+
+    @media (max-width: $bp-xl)
+    {
+        width: 200px;
+        background-color: #252525b0;
+        backdrop-filter:blur(1px);
+        z-index: 99;
+        
+        .card {
+            color: white;
+            box-shadow: none;
+            margin-bottom: 0;
+        }
+
+        .card-post-widget {
+            padding: 15px;
+            margin-right: 0;
+        }
+
+        .in-widget-tittle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .widget-post-index {
+            flex: none;
+        }
+    }
+}
+
+.container--top {
+    &.hide {
+        .post-sidebar {
+            padding-top: 15px;
+            height: calc(100% - 15px);
+        }
+        .post-content {
+            margin-top: 15px;
+        }
+    }
+}
+
+.post-wrapper {
+    padding: 0 16px;
+
+    // h1 ~ h6
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 24px;
+        margin-bottom: 16px;
+        font-weight: 600;
+        line-height: 1.25;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h1, h2 {
+        padding-bottom: .3em;
+        border-bottom: 1px solid #{'rgba(var(--theme-color), 0.3)'}; // #eaecef
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.25em;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    h5 {
+        font-size: .875em;
+    }
+
+    h6 {
+        font-size: .85em;
+        color: #6a737d;
+    }
+
+    // 有序、无序列表
+    ol, ul {
+        padding-left: 2em;
+        list-style: none;
+    }
+
+    ol ol, ol ul, ul ol, ul ul {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    li {
+        word-wrap: break-all;
+
+        >p {
+            display: inline-block;
+            margin: 8px 0;
+        }
+        +li {
+            margin-top: .25em;
+        }
+    }
+
+    ul > li::before {
+        content: "• ";
+        color: #{'rgba(var(--theme-color), 0.8)'};
+        font-weight: bold;
+
+        width: 1em;
+        margin-left: -1em; /* Also needed for space (tweak if needed) */
+    }
+
+    ul > li > ul > li::before{
+        content: "○ ";
+    }
+
+    ul > li > ul > li > ul > li::before {
+        content: "■ ";
+    }
+        
+    
+
+    ol li {
+        counter-increment: count-me;
+
+        &::before {
+            content: counter(count-me) ". ";
+            display: block;
+            position: relative;
+            max-width: 0px;
+            max-height: 0px;
+            left: -1.3em;
+            top: 0;
+            color: #{'rgba(var(--theme-color), 0.8)'};
+            font-weight: bold;
+        }
+    }
+
+
+    dl {
+        padding: 0;
+        dt {
+            padding: 0;
+            margin-top: 16px;
+            font-size: 1em;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        dd {
+            padding: 0 16px;
+            margin-bottom: 16px;
+        }
+    }
+
+    table {
+        display: block;
+        width: 100%;
+        overflow: auto;
+        
+        border-spacing: 0;
+        border-collapse: collapse;
+
+        th {
+            font-weight: 600;
+        }
+
+        td, th {
+            padding: 6px 13px;
+            border: 1px solid #dfe2e5;
+        }
+
+        tr {
+            background-color: #fff;
+            border-top: 1px solid #c6cbd1;
+        }
+
+        tr:nth-child(2n) {
+            background-color: #f6f8fa;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        box-sizing: initial;
+        background-color: #fff;
+
+        &[align=right] {
+            padding-left: 20px;
+        }
+
+        &[align=left] {
+            padding-right: 20px;
+        }
+    }
+
+
+    code {
+        padding: .2em .4em;
+        margin: 0;
+        font-size: 85%;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+    }
+
+    pre {
+        background-color: #f6f8fa;
+        border-radius: 3px;
+        font-size: 85%;
+        line-height: 1.45;
+        overflow: auto;
+        padding: 16px;
+
+        > code {
+            background-color: transparent;
+            border: 0;
+            display: inline;
+            line-height: inherit;
+            max-width: auto;
+            overflow: visible;
+            padding: 0;
+            word-wrap: normal;
+
+            font-size: 100%;
+
+            white-space: pre;
+            word-break: normal;
+        }
+
+        .copy {
+            float: right;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        &:hover {
+            .copy {
+                opacity: 1;
+            }
+        }
+    }
+
+    blockquote {
+        padding: 0 1em;
+        color: #6a737d;
+        border-left: .25em solid #{'rgba(var(--theme-color), 0.6)'};
+
+        margin: 0;
+
+        >:first-child {
+            margin-top: 0;
+        }
+
+        >:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    blockquote, details, dl, ol, p, pre, table, ul {
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
+}

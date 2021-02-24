@@ -1,39 +1,3 @@
-function toggle() {
-    const navbar = $('.navbar-item');
-    const tl = anime.timeline({easing: 'easeInOutQuad'});
-
-    let toggle = navbar.hasClass('active');
-
-    if(toggle) {
-        navbar.removeClass('active');
-    } else {
-        navbar.addClass('active');
-    }
-
-    // navbar.attr('display', toggle?'none':'flex')
-    tl.add({
-        targets: '.navbar-item ul',
-        opacity: toggle?[1, 0]:[0, 1],
-        duration: 200
-    }).add({
-        targets: '.navbar-item li',
-        delay: anime.stagger(100),
-        translateX: toggle?undefined:[888, 0],
-        duration: 300
-    });
-}
-
-function toTop(cb_done) {
-    return anime({
-        targets: document.scrollingElement,
-        scrollTop: 0,
-        duration: 500,
-        easing: 'easeInOutQuad',
-        autoplay: true,
-        complete: cb_done
-    });
-}
-
 class yunCover {
 
     initAnime() {
@@ -51,23 +15,23 @@ class yunCover {
     };
 
     constructor() {
-        this.lastScroll = 0;
+        // prevent history popstate and can't get correct initRect
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
 
         this.cover_tittle = $('.cover-tittle');
         this.initRect = this.cover_tittle[0].getBoundingClientRect();
-        
-        console.log(this.initRect);
-
         this.initFontSize = this.cover_tittle.css('font-size');
+
+        console.log('[*] mobile mode:', is_mobile);
 
         $('.navbar-logo').hide();
 
-        this.onResize();
-
-
         $(window).resize(() => { this.onResize(); });
         $(window).scroll(() => { this.onScroll(); });
-        
+
+        this.onResize();
         this.initAnime();
     }
 
@@ -87,11 +51,6 @@ class yunCover {
 
     onScroll() {
         const top = $(window).scrollTop();
-        if(top > this.lastScroll && top > this.offset + 300) {
-            $('.container').addClass('hide');
-        } else {
-            $('.container').removeClass('hide');
-        }
 
         if(top > this.offset) {
             $('.container').addClass('container--top');
@@ -102,8 +61,6 @@ class yunCover {
             $('.navbar-item').removeClass('active');
             this.onProcess(top / this.offset);
         }
-
-        this.lastScroll = top;
     };
 
     onProcess(process) {

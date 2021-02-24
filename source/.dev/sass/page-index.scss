@@ -1,4 +1,3 @@
-$nav-height: 60px;
 // $cover-height: calc(100vh);
 $cover-height: var(--vh);
 
@@ -9,6 +8,10 @@ $cover-height: var(--vh);
         }
 
         .content {
+            margin-top: 0;
+        }
+
+        .index-content {
             margin-top: calc(#{$cover-height} - 60px);
         }
     }
@@ -39,7 +42,7 @@ $cover-height: var(--vh);
                         z-index: -1;
                         padding-top: $nav-height;
                         flex-direction: column;
-                        background-color: #3535354d;
+                        background-color: #252525b0;
                         margin: 0;
                     }
 
@@ -64,7 +67,7 @@ $cover-height: var(--vh);
         }
     }
 
-    .content {
+    .index-content {
         margin-top: $cover-height;
     }
 
@@ -91,7 +94,7 @@ $cover-height: var(--vh);
     box-sizing: border-box;
     text-align: center;
 
-    transition: transform 0.5s ease, opacity 0.3s ease-in;
+    transition: transform 0.4s ease, opacity 0.3s ease-in;
 
     z-index: 999;
 
@@ -103,6 +106,7 @@ $cover-height: var(--vh);
         left: 0;
         // bottom: calc(#{$cover-height}/2 + 10px);
 
+        will-change: bottom, left, font-size, font-weight, letter-spacing;
         font-size: 40px;
         font-weight: normal;
         letter-spacing: 8px;
@@ -226,7 +230,7 @@ $cover-height: var(--vh);
     }
 }
 
-.content {
+.index-content {
     padding-top: 100px;
     margin: 0 auto;
 }
@@ -261,17 +265,26 @@ $cover-height: var(--vh);
     }
 }
 
-.card-post {
+.card-article {
+    $img-width: 45%;
+
+    display: flex;
     height: 250px;
 
     .in-card {
-        flex: 1;
+        width: 100% - $img-width;
         padding: 15px 25px;
-        
+        box-sizing: border-box;
+
         .in-card-tittle {
             text-align: center;
         }
 
+        .in-card-meta {
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
         .in-card-meta-item{
             color: #535353;
             font-size: 12px;
@@ -291,10 +304,14 @@ $cover-height: var(--vh);
             font-size: 14px;
             color: #888888;
         }
+
+        a:not(:hover) {
+            color: #535353;
+        }
     }
 
-    a {
-        width: 45%;
+    > a {
+        width: $img-width;
 
         color: black;
         overflow: hidden;
@@ -302,13 +319,17 @@ $cover-height: var(--vh);
         border-bottom-left-radius: 3px;
         border-bottom-right-radius: 3px;
 
+        img {
+            will-change: transform;
+        }
+
     }
 
     @media (max-width: $bp-l) {
         height: 400px;
         flex-direction: column;
 
-        a {
+        a, .in-card {
             width: 100%;
         }
 
@@ -351,14 +372,13 @@ $cover-height: var(--vh);
         transition: transform 0.3s ease;
     }
 
-    &:hover a img{
+    &:hover > a img{
         transform: scale(1.2);
     }
 
 }
 
 .card-widget {
-    display: block;
     padding: 20px 15px;
 
     .in-widget-tittle {
@@ -429,7 +449,7 @@ $cover-height: var(--vh);
         margin-top: 10px;
 
         a {
-            // color: var(--theme-color);
+            // color: #{'rgb(var(--theme-color))'};
             color: #24292E;
             transition: transform 0.1s ease-in;
         }
@@ -496,7 +516,7 @@ $cover-height: var(--vh);
         &:hover {
             color: white;
             
-            background-color: var(--theme-color);
+            background-color: #{'rgb(var(--theme-color))'};
         }
 
         span {

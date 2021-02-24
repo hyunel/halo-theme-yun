@@ -4,54 +4,15 @@
 <div class="container">
     <header class="cover">
         <span class="cover-tittle">${blog_title!}</span>
-
-        <nav class="navbar">
-            <div class="navbar-logo">
-                <a href="javascript:;" onclick="toTop()">${blog_title!}</a>
-            </div>
-            
-            <div class="navbar-item">
-
-                <ul>
-                    <@menuTag method="tree">
-                        <#list menus?sort_by('priority') as menu>
-                            <li>
-                                <#if menu.children?? && menu.children?size gt 0>
-                                        <#--  <a href="javascript:void(0)" target="${menu.target!}" class="nav-menu-link">${menu.name} <i class="fa fa-angle-down nav-menu-angle" aria-hidden="true"></i></a>  -->
-                                    <#else>
-                                        <a href="${menu.url!}" target="${menu.target!}">${menu.name}</a>
-                                </#if>
-                                <#--  <#if menu.children?? && menu.children?size gt 0>
-                                    <ul class="nav-sub-menu" style="display: none;">
-                                        <#list menu.children?sort_by('priority') as child>
-                                            <li>
-                                                <a href="${child.url!}" data-ajax target="${child.target!}"
-                                                   onfocus="this.blur();">${child.name}</a>
-                                            </li>
-                                        </#list>
-                                    </ul>
-                                </#if>  -->
-                            </li>
-                        </#list>
-                    </@menuTag>
-                </ul>
-                
-                <a class="navbar-toggler" onclick="toggle()">
-                    <span class="navbar-toggler--line navbar-toggler--line-left"></span>
-                    <span class="navbar-toggler--line"></span>
-                    <span class="navbar-toggler--line navbar-toggler--line-right"></span>
-                </a>
-            </div>
-            
-        </nav>
+        <#include "module/navbar.ftl">
     </header>
 
-    <div class="content layout">
+    <div class="index-content layout">
         <div class="layout-left">
-            <div class="layout-mypost">
+            <div class="layout-articles">
             <#if posts?? && posts.getTotalElements() gt 0>
                 <#list posts.content as post>
-                <article class="card card-post">
+                <article class="card card-article">
 
                 <#if post.thumbnail?? && post.thumbnail!=''>
                     <a href="${post.fullPath!}"><img src="${post.thumbnail!}" alt="bg"></a>
@@ -91,17 +52,18 @@
                                         <use xlink:href="#icon-tag"></use>
                                     </svg>
                                     <#list post.tags as tag>
-                                        <a href="${tag.fullPath!}">${tag.name!}&nbsp;&nbsp;</a>
+                                        <a href="${tag.fullPath!}">${tag.name!}</a>
                                     </#list>
                                 </div>
                             </#if>
-
+                            <#if !post.disallowComment!false>
                             <div class="in-card-meta-item">
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-FontAwesomecommentdotssolid"></use>
                                 </svg>
                                 ${post.commentCount} 条评论
                             </div>
+                            </#if>
                         </div>
                         <p class="in-card-article limit-more-line">${post.summary!}</p>
                     </div>
@@ -282,15 +244,5 @@
         
     </div>
 </div>
-
-    
-<div class="toTop"></div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/wordcloud@1.1.2/src/wordcloud2.min.js"></script>
-<script src="${theme_base!}/source/js/index.js"></script>
-<script src="${theme_base!}/source/js/iconfont.js"></script>
 
 </@layout>

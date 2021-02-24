@@ -2,9 +2,9 @@
   "name": "halo-theme-yun",
   "version": "1.0.0",
   "scripts": {
-    "watch": "sass --watch source/css/style.scss:source/css/style.css",
+    "watch": "sass --watch source/.dev/sass/style.scss:source/css/style.css",
     "webpack": "webpack",
-    "sass": "sass source/css/style.scss source/css/style.css",
+    "sass": "sass source/.dev/sass/style.scss source/css/style.css",
     "dev": "java11.lnk -jar %USERPROFILE%/halo-dev/halo-1.4.5.jar --spring.profiles.active=dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
