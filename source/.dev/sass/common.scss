@@ -173,3 +173,20 @@
         }
     }
 }
+
+.tags-cloud {
+    p {
+        color: #888888;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    span {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        &:hover {
+            transform: scale(1.2) !important;
+        }
+        
+    }
+}

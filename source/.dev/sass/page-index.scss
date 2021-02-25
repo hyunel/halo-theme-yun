@@ -390,6 +390,11 @@ $cover-height: var(--vh);
         color: #4c4948;
         margin-bottom: 8px;
     }
+
+    a.in-widget-tittle:hover {
+        color: #{'rgb(var(--theme-color))'};
+    }
+    
 }
 
 .widget-avatar {
@@ -491,15 +496,6 @@ $cover-height: var(--vh);
 
 .widget-tags .in-widget-content {
     height: 200px;
-    
-    span {
-        cursor: pointer;
-        transition: transform 0.3s ease;
-        &:hover {
-            transform: scale(1.2) !important;
-        }
-        
-    }
 }
 
 .widget-category .in-widget-content {

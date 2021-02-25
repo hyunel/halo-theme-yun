@@ -203,14 +203,14 @@
             </div>
 
             <div class="card card-widget widget-tags">
-                <div class="in-widget-tittle">
+                <a class="in-widget-tittle" href="/tags">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-tag"></use>
                     </svg>
                     标签云
-                </div>
+                </a>
                 <!-- .widget-tags .in-widget-content -->
-                <div class="in-widget-content"></div>
+                <div class="in-widget-content tags-cloud"></div>
             </div>
 
             <div class="card card-widget widget-category">

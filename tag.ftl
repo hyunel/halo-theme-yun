@@ -1,5 +1,6 @@
 <#include "module/macro.ftl">
 <@layout title="标签：${tag.name} - ${blog_title!}">
+<div class="content">
     <h1>标签：${tag.name}</h1>
     <ul>
         <#list posts.content as post>
@@ -42,4 +43,5 @@
     <#else>
         <span>当前只有一页</span>
     </#if>
+</div>
 </@layout>
