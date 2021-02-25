@@ -42,6 +42,7 @@
 
 <#if is_index??><script>var is_index=true;</script></#if>
 <#if is_post??><script>var is_post=true;</script></#if>
+<#if is_sheet??><script>var is_sheet=true;</script></#if>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
@@ -49,7 +50,7 @@
 
 <#if is_index??>
 <script src="https://cdn.jsdelivr.net/npm/wordcloud@1.1.2/src/wordcloud2.min.js"></script>
-<#elseif is_post??>
+<#elseif is_post?? || is_sheet??>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
 </#if>
