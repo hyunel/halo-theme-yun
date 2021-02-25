@@ -2,17 +2,29 @@
   "name": "halo-theme-yun",
   "version": "1.0.0",
   "scripts": {
-    "watch": "sass --watch source/.dev/sass/style.scss:source/css/style.css",
-    "webpack": "webpack",
+    "watch": "webpack --watch",
+    "build": "copy source\\.dev\\js\\iconfont.js source\\js\\iconfont.js && webpack",
     "sass": "sass source/.dev/sass/style.scss source/css/style.css",
     "dev": "java11.lnk -jar %USERPROFILE%/halo-dev/halo-1.4.5.jar --spring.profiles.active=dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "hyun",
   "devDependencies": {
-    "@webpack-cli/init": "^1.1.3",
+    "@babel/core": "^7.13.1",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.13.5",
+    "autoprefixer": "^10.2.4",
+    "babel-loader": "^8.2.2",
+    "core-js": "^3.9.0",
+    "css-loader": "^5.0.2",
+    "mini-css-extract-plugin": "^1.3.8",
+    "postcss": "^8.2.6",
+    "postcss-loader": "^5.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "regenerator-runtime": "^0.13.7",
     "sass": "^1.32.7",
-    "webpack": "^5.23.0",
+    "sass-loader": "^11.0.1",
+    "webpack": "^5.24.1",
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {}

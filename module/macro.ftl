@@ -47,18 +47,15 @@
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js"></script>
 
-<script src="${theme_base!}/source/js/iconfont.js"></script>
-<script src="${theme_base!}/source/js/common.js?v=1"></script>
-
 <#if is_index??>
 <script src="https://cdn.jsdelivr.net/npm/wordcloud@1.1.2/src/wordcloud2.min.js"></script>
-<script src="${theme_base!}/source/js/index.js?v=2"></script>
 <#elseif is_post??>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
-<script src="${theme_base!}/source/js/post.js"></script>
 </#if>
 
+<script src="${theme_base!}/source/js/iconfont.js"></script>
+<script src="${theme_base!}/source/js/main.js"></script>
 </html>
 </#macro>
 

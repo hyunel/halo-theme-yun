@@ -84,6 +84,6 @@
         </div>
 
 
-    <style>footer { padding-left: 20%; }</style>
+        <style>@media not screen and (max-width: 900px) { footer { padding-left: 20%; }}</style>
 
 </@layout>
