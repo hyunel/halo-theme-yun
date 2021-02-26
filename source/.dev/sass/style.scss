@@ -28,6 +28,17 @@ $nav-height: 60px;
     --vh: 80px;
 }
 
+html[data-theme='dark'] {
+    .toggle-dark-mode {
+        .light {
+            display: inline-block;
+        }
+        .dark {
+            display: none;
+        }
+    }
+}
+
 body {
     margin: 0;
     font-family: "Century Gothic", 'Lato', 'Microsoft YaHei', 'SimHei', sans-serif;

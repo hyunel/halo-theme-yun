@@ -2,7 +2,7 @@
 <@layout title="标签：${tag.name} - ${blog_title!}">
 
 <div class="content page-content page-list-content">
-    <h1><a href="${context!}tag">标签</a>：${tag.name}</h1>
+    <h1><a href="${context!}tags">标签</a>：${tag.name}</h1>
     <p>创建时间: ${tag.createTime?string("yyyy-MM-dd")}, 文章数量: ${posts.content?size}</p>
     <main class="list">
     <#list posts.content as post>

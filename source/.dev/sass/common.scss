@@ -130,6 +130,7 @@
         display: inline-block;
         height: 36px;
         width: 36px;
+        overflow: hidden;
 
         color: white;
         opacity: 0.8;
@@ -158,13 +159,6 @@
             transform: rotate(90deg);
         }
     }
-
-    .toggle-dark-mode {
-        .light {
-            display: none;
-        }
-    }
-
     
     // 特殊情况类
     .config-mode {
@@ -176,6 +170,16 @@
         right: 0px;
     }
 
+    .toggle-dark-mode {
+        .light {
+            display: none;
+        }
+        .dark {
+            display: inline-block;
+        }
+        
+    }
+
     .float-bar-hide-xl {
         display: none;
 
@@ -183,6 +187,71 @@
             display: block;
         }
     }
+}
+
+.theme-color-picker {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    &.active {
+        visibility: visible;
+        opacity: 0.8;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: fixed;
+    bottom: 84px;
+    right: 60px;
+    height: 100px;
+    width: 150px;
+
+    padding: 12px;
+    box-sizing: border-box;
+
+    border-radius: 3px;
+    line-height: 32px;
+    
+    background-color: #{'rgb(var(--theme-color))'};
+
+    .picker {
+        margin-bottom: 6px;
+        span {
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            vertical-align: super
+        }
+    }
+
+    .color-wrapper {
+        display: inline-block;
+        background-color: #{'rgb(var(--theme-color))'};
+        box-shadow: 1px 1px 3px 2px rgb(7 17 27 / 35%);
+        border-radius: 3px;
+
+        input {
+            opacity: 0;
+            display: block;
+            width: 32px;
+            height: 32px;
+            border: none;
+        }
+    }
+
+    .dot {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-color: #888888;
+        border-radius: 12px;
+        box-shadow: 2px 2px 3px rgb(7 17 27 / 35%);
+        margin: 2px;
+    }
+    
+
 }
 
 .tags-cloud {

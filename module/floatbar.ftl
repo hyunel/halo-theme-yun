@@ -1,3 +1,19 @@
+<div class="theme-color-picker">
+    <div class="picker">
+        <span>主题色:&nbsp;</span>
+        <div class="color-wrapper">
+            <input type="color" name="themeColor">
+        </div>
+    </div>
+
+    <div>
+        <div class="dot" style="background-color: #B37E86;"></div>
+        <div class="dot" style="background-color: #12B7F5;"></div>
+        <div class="dot" style="background-color: #FC5531;"></div>
+        <div class="dot" style="background-color: #D01884;"></div>
+    </div>
+</div>
+
 <div class="float-bar">
     <div class="float-item config-mode switch-theme-color">
         <svg class="icon dark" aria-hidden="true">

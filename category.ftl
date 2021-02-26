@@ -2,7 +2,7 @@
 <@layout title="分类：${category.name} - ${blog_title!}">
 
 <div class="content page-content page-list-content">
-    <h1><a href="${context!}tag">分类</a>：${category.name}</h1>
+    <h1><a href="${context!}categories">分类</a>：${category.name}</h1>
     <p>创建时间: ${category.createTime?string("yyyy-MM-dd")}, 文章数量: ${posts.content?size}</p>
     <main class="list">
     <#list posts.content as post>

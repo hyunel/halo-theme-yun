@@ -8,7 +8,7 @@
                 </svg>
                 文章目录
             </div>
-            <div class="in-widget-content" id="post-toc"></div>
+            <div class="in-widget-content yun-scroll-bar" id="post-toc"></div>
         </div>
         <div class="card card-post-widget widget-post-count">
             <div class="in-widget-tittle">
