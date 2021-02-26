@@ -1,6 +1,6 @@
 <nav class="navbar">
     <div class="navbar-logo">
-        <a href="/">${blog_title!}</a>
+        <a href="${context!}">${blog_title!}</a>
     </div>
     
     <div class="navbar-item">

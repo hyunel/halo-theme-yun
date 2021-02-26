@@ -46,7 +46,7 @@ $cover-height: var(--vh);
                         z-index: -1;
                         padding-top: $nav-height;
                         flex-direction: column;
-                        background-color: #252525b0;
+                        background-color: rgba(37,37,37,0.69);;
                         margin: 0;
                     }
 
@@ -54,7 +54,7 @@ $cover-height: var(--vh);
                         margin: 0;
 
                         &:hover {
-                            background-color: #ffffff33;
+                            background-color: rgba(255,255,255,0.2);
                         }
 
                         a {
@@ -373,11 +373,11 @@ $cover-height: var(--vh);
     a img {
         width: 100%;
         height: 100%;
-        transition: transform 0.3s ease;
+        transition: transform 0.8s ease;
     }
 
     &:hover > a img{
-        transform: scale(1.2);
+        transform: scale(1.05);
     }
 
 }

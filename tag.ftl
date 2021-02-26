@@ -1,47 +1,37 @@
 <#include "module/macro.ftl">
 <@layout title="标签：${tag.name} - ${blog_title!}">
-<div class="content">
-    <h1>标签：${tag.name}</h1>
-    <ul>
-        <#list posts.content as post>
-            <li>
-                <a href="${post.fullPath!}">${post.title}</a>
-            </li>
-        </#list>
-    </ul>
 
-    <h1>分页</h1>
-
-    <#if posts.totalPages gt 1>
-        <ul>
-            <@paginationTag method="tagPosts" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${tag.slug!}">
-                <#if pagination.hasPrev>
-                    <li>
-                        <a href="${pagination.prevPageFullPath!}">
-                            上一页
-                        </a>
-                    </li>
-                </#if>
-                <#list pagination.rainbowPages as number>
-                    <li>
-                        <#if number.isCurrent>
-                            <span class="current">第 ${number.page!} 页</span>
-                        <#else>
-                            <a href="${number.fullPath!}">第 ${number.page!} 页</a>
-                        </#if>
-                    </li>
-                </#list>
-                <#if pagination.hasNext>
-                    <li>
-                        <a href="${pagination.nextPageFullPath!}">
-                            下一页
-                        </a>
-                    </li>
-                </#if>
-            </@paginationTag>
-        </ul>
-    <#else>
-        <span>当前只有一页</span>
-    </#if>
+<div class="content page-content page-list-content">
+    <h1><a href="${context!}tag">标签</a>：${tag.name}</h1>
+    <p>创建时间: ${tag.createTime?string("yyyy-MM-dd")}, 文章数量: ${posts.content?size}</p>
+    <main class="list">
+    <#list posts.content as post>
+        <a class="card card-list" href="${post.fullPath!}"> 
+            <h3 class="in-card-tittle">${post.title!}</h3>
+            <div class="in-card-meta">
+                <div class="in-card-meta-item">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-time"></use>
+                    </svg>
+                    ${post.createTime?string("yyyy-MM-dd")}
+                </div>
+                <div class="in-card-meta-item">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                    </svg>
+                        ${post.visits!} 热度
+                </div>
+            </div>
+            <p class="limit-more-line">${post.summary!}</p>
+        </a>
+    </#list>
+    </main>
 </div>
+
+<#if posts.totalPages gt 1>
+    <@paginationTag method="tagPosts" page="${posts.number}" total="${posts.totalPages}" display="3" slug="${tag.slug!}">
+        <#include "module/pagination.ftl">
+    </@paginationTag>
+</#if>
+
 </@layout>

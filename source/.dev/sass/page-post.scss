@@ -153,7 +153,7 @@ $sidebar-width: 20%;
     @media (max-width: $bp-xl)
     {
         width: 200px;
-        background-color: #252525b0;
+        background-color: rgba(37,37,37,0.69);
         backdrop-filter:blur(1px);
         z-index: 99;
         left: -999px;

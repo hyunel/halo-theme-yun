@@ -80,7 +80,7 @@
         <div class="layout-info">
             <div class="card card-widget widget-avatar auto-hide">
                 <img src="${user.avatar!}" alt="avatar">
-                <p>Hyun</p>
+                <p>${user.nickname!}</p>
                 <p>Student</p>
                 <p>
                     <svg class="icon color-theme" aria-hidden="true">
@@ -155,7 +155,7 @@
                             </svg>
                         </a>
 
-                        <a href="#">
+                        <a href="${rss_url!}">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-RSS"></use>
                             </svg>
@@ -176,23 +176,23 @@
                 <div class="in-widget-content color-theme">
                     <div class="num-block">
                         <div>文章</div>
-                        <div>123</div>
+                        <div><@postTag method="count">${count!0}</@postTag></div>
                     </div>
                     <div class="num-block">
-                        <div>阅读</div>
-                        <div>123</div>
+                        <div>图片</div>
+                        <div><@photoTag method="count">${count!0}</@photoTag></div>
                     </div>
                     <div class="num-block">
                         <div>评论</div>
-                        <div>123</div>
+                        <div><@commentTag method="count">${count!0}</@commentTag></div>
                     </div>
                     <div class="num-block">
                         <div>分类</div>
-                        <div>1</div>
+                        <div><@categoryTag method="count">${count!0}</@categoryTag></div>
                     </div>
                     <div class="num-block">
                         <div>标签</div>
-                        <div>1</div>
+                        <div><@tagTag method="count">${count!0}</@tagTag></div>
                     </div>
                     <div class="num-block">
                         <div>访客</div>
@@ -203,7 +203,7 @@
             </div>
 
             <div class="card card-widget widget-tags">
-                <a class="in-widget-tittle" href="/tags">
+                <a class="in-widget-tittle" href="${context!}tags">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-tag"></use>
                     </svg>
@@ -214,24 +214,29 @@
             </div>
 
             <div class="card card-widget widget-category">
-                <div class="in-widget-tittle">
+                <a class="in-widget-tittle" href="${context!}categories">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-leibie"></use>
                     </svg>
                     文章分类
-                </div>
+                </a>
 
                 <div class="in-widget-content">
                     <ul>
             <@categoryTag method="list">
                 <#if categories?? && categories?size gt 0>
                     <#list categories as category>
+                    <#if category?index gt 3>
+                        <li><a href="${context!}categories">...</a></li>
+                    <#break></#if>
                         <li><a href="${category.fullPath!}"><span>${category.name}</span><span class="line-num">
                         <@postTag method="listByCategorySlug" categorySlug="${category.slug!}">
                             ${posts?size}
                         </@postTag>
                         </span></a></li>
                     </#list>
+                    <#else>
+                        <li>暂时还没有分类</li>
                 </#if>
             </@categoryTag>
                     </ul>
