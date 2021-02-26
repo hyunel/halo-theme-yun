@@ -325,6 +325,10 @@ $cover-height: var(--vh);
 
         img {
             will-change: transform;
+            
+            /* Force Hardware Acceleration */
+            -webkit-transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
         }
 
     }
