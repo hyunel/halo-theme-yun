@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "watch": "webpack --watch",
-    "build": "copy source\\.dev\\js\\iconfont.js source\\js\\iconfont.js && webpack",
+    "build": "copy source\\.dev\\js\\preload.js source\\js\\preload.js && copy source\\.dev\\js\\iconfont.js source\\js\\iconfont.js && webpack",
     "sass": "sass source/.dev/sass/style.scss source/css/style.css",
     "dev": "java11.lnk -jar %USERPROFILE%/halo-dev/halo-1.4.5.jar --spring.profiles.active=dev",
     "test": "echo \"Error: no test specified\" && exit 1"

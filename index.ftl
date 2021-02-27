@@ -3,6 +3,7 @@
 
 <div class="container">
     <header class="cover">
+        <div class="background"></div>
         <span class="cover-tittle">${blog_title!}</span>
         <#include "module/navbar.ftl">
     </header>

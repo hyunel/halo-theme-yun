@@ -29,14 +29,7 @@ $nav-height: 60px;
 }
 
 html[data-theme='dark'] {
-    .toggle-dark-mode {
-        .light {
-            display: inline-block;
-        }
-        .dark {
-            display: none;
-        }
-    }
+    @import 'module/darkmode.scss';
 }
 
 body {

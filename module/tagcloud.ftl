@@ -15,6 +15,8 @@
             wordCloudEm,
             {
                 list: list,
+                backgroundColor:'transparent',
+                fontWeight: 'bold',
                 weightFactor: function (size) {
                     return size + 12;
                 },

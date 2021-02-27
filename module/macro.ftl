@@ -8,6 +8,8 @@
     <meta name="keywords" content="${meta_keywords!}"/>
     <meta name="description" content="${meta_description!}" />
     
+    <#--  优先加载主题设置 preload.js  -->
+    <script src="${theme_base!}/source/js/preload.js"></script>
     <link rel="stylesheet" href="${theme_base!}/source/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/github.css">
 
@@ -25,7 +27,7 @@
 
 <#if !is_index??>
     <div class="container container--top">
-        <div class="cover"><#include "navbar.ftl"></div>
+        <div class="cover"><div class="background"></div><#include "navbar.ftl"></div>
 </#if>
 
 <#nested >

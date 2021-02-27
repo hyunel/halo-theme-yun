@@ -52,16 +52,16 @@
 
 .card {
     border-radius: 8px;
-    box-shadow: 0 4px 8px 6px rgb(7 17 27 / 6%);
+    box-shadow: 0 3px 8px 6px rgb(7 18 26 / 6%);
     margin-bottom: 15px;
 
-    transition: box-shadow .3s ease;
+    transition: background-color 0.3s ease,box-shadow 0.3s ease;
     overflow: hidden;
 
     will-change: box-shadow;
 
     &:hover {
-        box-shadow: 0 4px 12px 12px rgb(7 17 27 / 15%);
+        box-shadow: 0 3px 12px 12px rgb(7 18 26 / 14%);
     }
 }
 

@@ -1,0 +1,105 @@
+.toggle-dark-mode {
+    .light {
+        display: inline-block;
+    }
+    .dark {
+        display: none;
+    }
+}
+
+body {
+    background-color: #0D1117;
+    transition: background-color 0.3s ease;
+}
+
+.cover .background{
+    filter: brightness(0.5);
+}
+
+.card {
+    background-color: #191e25;
+    box-shadow: 0 3px 8px 6px rgb(110 110 110 / 6%);
+
+    &:hover {
+        box-shadow: 0 3px 12px 12px rgb(122 122 122 / 8%);
+    }
+
+    .in-widget-tittle a:not(:hover) {
+        color: white;
+    }
+
+    color: #888888;
+}
+
+.card-article .in-card-tittle:not(:hover),
+.card-post-widget .in-widget-tittle,
+.card-widget .in-widget-tittle:not(a),
+.card-widget a.in-widget-tittle:not(:hover) {
+    color: white;
+}
+
+.widget-social .in-widget-content a:not(.star),
+.widget-category .in-widget-content li a:not(:hover) {
+    color: #888888;
+}
+
+.post-sidebar .card {
+    background-color: unset;
+    box-shadow: unset;
+}
+
+.pagination {
+    background-color: #191e25;
+    box-shadow: 0 3px 8px 6px rgb(110 110 110 / 6%);
+    
+    &:hover {
+        box-shadow: 0 3px 12px 12px rgb(122 122 122 / 8%);
+    }
+}
+
+.page-content {
+    color: white;
+}
+
+.page-list-content a:not(:hover){
+    color: white;
+}
+
+.yun-scroll-bar::-webkit-scrollbar-track {
+    background-color: #888888;
+}
+
+.cd-timeline-content {
+    color: white;
+    p {
+        color: #888888;
+    }
+    ul h2 a:not(:hover) {
+        color: white;
+    }
+    
+}
+
+
+.post-wrapper {
+    h1 {
+        color: #C9D1D9;
+    }
+
+    table {
+        td, th {
+            padding: 6px 13px;
+            border: 1px solid #3B434B;
+        }
+
+        tr {
+            background-color: #0D1117;
+            border-top: 1px solid #3B434B;
+        }
+
+        tr:nth-child(2n) {
+            background-color: #161B22;
+        }
+    }
+}
+//#d9bb3c

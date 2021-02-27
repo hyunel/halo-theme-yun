@@ -91,8 +91,28 @@ class yunNav {
 
 
 
-// load
+// // load
 document.addEventListener('DOMContentLoaded', ()=>{
+
+    function setTheme(color) {
+        function hexToRgb(hex) {
+            var bigint = parseInt(hex, 16);
+            var r = (bigint >> 16) & 255;
+            var g = (bigint >> 8) & 255;
+            var b = bigint & 255;
+        
+            return [r, g, b].join();
+        }
+
+        color = color.replace(/rgb\((.*)\)/,'$1').replace(/ /g,'');
+
+        if(color.startsWith('#')) {
+            color = hexToRgb(color.substring(1));
+        }
+
+        document.documentElement.style.setProperty('--theme-color', color);
+        localStorage.setItem("themeColor", color);
+    }
 
     new yunNav();
 
@@ -105,40 +125,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         e.stopPropagation();
     });
 
-
-
-    function setTheme(color) {
-        function hexToRgb(hex) {
-            var bigint = parseInt(hex, 16);
-            var r = (bigint >> 16) & 255;
-            var g = (bigint >> 8) & 255;
-            var b = bigint & 255;
-        
-            return [r, g, b].join();
-        }
-        function rgbToHex(r, g, b) {
-            return '#' + [r, g, b].map(x => parseInt(x).toString(16).padStart(2, '0')).join('');
-        }
-
-        if(!color.startsWith('#')) {
-            let temp = color.replace(/rgb\((.*)\)/,'$1').replace(/ /g,'').split(',');
-            console.log(temp, rgbToHex(temp[0],temp[1],temp[2]));
-            color = rgbToHex(temp[0],temp[1],temp[2]);
-        }
-
-        document.documentElement.style.setProperty('--theme-color', hexToRgb(color.substring(1)));
-        localStorage.setItem("themeColor", color);
-    }
-
-    let themeColor = localStorage.getItem("themeColor");
-    if(localStorage.getItem("nightMode")==='true') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
-    if(themeColor!=undefined) {
-        console.log('[*] 检测到本地主题色：', themeColor);
-        setTheme(themeColor);
-    }
-
     $('.color-wrapper input').click(function(e) {
         e.stopPropagation();
     }).on('input', function(e) {
@@ -147,16 +133,19 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     $('.theme-color-picker .dot').click(function(e) {
         setTheme(e.target.style['backgroundColor']);
+        toastr.success('主题色切换成功！');
     });
 
     $('.toggle-dark-mode').click(function(e) {
         if(document.documentElement.getAttribute('data-theme')=='dark') {
             document.documentElement.setAttribute('data-theme', 'light');
             localStorage.setItem("nightMode", "false");
+            toastr.success('已关闭夜间模式~');
         }
         else {
             document.documentElement.setAttribute('data-theme', 'dark');
             localStorage.setItem("nightMode", "true");
+            toastr.success('已开启夜间模式~');
         }
     });
 
