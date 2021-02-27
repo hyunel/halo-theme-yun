@@ -8,6 +8,10 @@ $sidebar-width: 20%;
     transition: margin-top 0.5s ease;
     box-sizing: border-box;
     
+    &.page-content > * {
+        max-width: 1000px;
+    }
+
     .post-info {
         color: white;
         height: 300px;

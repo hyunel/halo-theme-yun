@@ -7,3 +7,14 @@ genernal:
       label: 首页公告
       type: textarea
       default: '欢迎来到我的博客'
+    post_in_center:
+      name: post_in_center
+      label: 文章页布局
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 拥有最大宽度并居中
+        - value: false
+          label: 完全按百分比

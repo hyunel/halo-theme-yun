@@ -43,10 +43,13 @@ body {
     color: #888888;
 }
 
-.post-sidebar .card {
-    background-color: unset;
-    box-shadow: unset;
+@media (max-width: $bp-xl) {
+    .post-sidebar .card {
+        background-color: unset;
+        box-shadow: unset;
+    }
 }
+
 
 .pagination {
     background-color: #191e25;

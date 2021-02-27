@@ -34,8 +34,11 @@
         </div>
 
     </div>
-
+    <#if settings.post_in_center?? && settings.post_in_center>
+        <div class="page-content post-content">
+    <#else>
         <div class="post-content">
+    </#if>
             <div class="card card-post">
                 <#assign postimg=theme_base+'/source/images/bg-cover.jpg'/>
                 <#if post.thumbnail?? && post.thumbnail!=''><#assign postimg=post.thumbnail /></#if>

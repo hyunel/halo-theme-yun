@@ -49,6 +49,10 @@ function loadPost() {
         })
     }
 
+    // 初始化图片显示
+    $(".post-wrapper img").each(function(){
+        $(this).wrap(`<a href="${this.src}" data-fancybox="group" data-caption="${this.alt}" class="fancybox"></a>`)
+    });
 };
 
 function loadToc(from, to, sec) {
