@@ -1,3 +1,8 @@
+$back-color: #0D1117;
+$second-color: #181d24;
+$primary-font-color: white;
+$font-color: #888888;
+
 .toggle-dark-mode {
     .light {
         display: inline-block;
@@ -8,7 +13,7 @@
 }
 
 body {
-    background-color: #0D1117;
+    background-color: $back-color;
     transition: background-color 0.3s ease;
 }
 
@@ -17,30 +22,30 @@ body {
 }
 
 .card {
-    background-color: #191e25;
+    background-color: $second-color;
     box-shadow: 0 3px 8px 6px rgb(110 110 110 / 6%);
 
     &:hover {
-        box-shadow: 0 3px 12px 12px rgb(122 122 122 / 8%);
+        box-shadow: 0 3px 16px 12px rgb(200 200 200 / 16%);
     }
 
     .in-widget-tittle a:not(:hover) {
-        color: white;
+        color: $primary-font-color;
     }
 
-    color: #888888;
+    color: $font-color;
 }
 
 .card-article .in-card-tittle:not(:hover),
 .card-post-widget .in-widget-tittle,
 .card-widget .in-widget-tittle:not(a),
 .card-widget a.in-widget-tittle:not(:hover) {
-    color: white;
+    color: $primary-font-color;
 }
 
 .widget-social .in-widget-content a:not(.star),
 .widget-category .in-widget-content li a:not(:hover) {
-    color: #888888;
+    color: $font-color;
 }
 
 @media (max-width: $bp-xl) {
@@ -52,33 +57,33 @@ body {
 
 
 .pagination {
-    background-color: #191e25;
+    background-color: $second-color;
     box-shadow: 0 3px 8px 6px rgb(110 110 110 / 6%);
     
     &:hover {
-        box-shadow: 0 3px 12px 12px rgb(122 122 122 / 8%);
+        box-shadow: 0 3px 16px 12px rgb(200 200 200 / 16%);
     }
 }
 
 .page-content {
-    color: white;
+    color: $primary-font-color;
 }
 
 .page-list-content a:not(:hover){
-    color: white;
+    color: $primary-font-color;
 }
 
 .yun-scroll-bar::-webkit-scrollbar-track {
-    background-color: #888888;
+    background-color: $font-color;
 }
 
 .cd-timeline-content {
-    color: white;
+    color: $primary-font-color;
     p {
-        color: #888888;
+        color: $font-color;
     }
     ul h2 a:not(:hover) {
-        color: white;
+        color: $primary-font-color;
     }
     
 }
@@ -96,7 +101,7 @@ body {
         }
 
         tr {
-            background-color: #0D1117;
+            background-color: $back-color;
             border-top: 1px solid #3B434B;
         }
 

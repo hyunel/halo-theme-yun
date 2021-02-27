@@ -2,14 +2,132 @@
 genernal:
   label: 基本设置
   items:
+    theme_default_color:
+      name: theme_default_color
+      label: 主题默认颜色
+      type: color
+      default: '#C2989E'
+    index_cover_img:
+      name: index_cover_img
+      label: 主页头图及导航条图片
+      type: text
+      placeholder: '留空则使用默认'
+      description: '请填写图片 URL, 建议将主题默认色改为图片主要颜色'
     index_notice:
       name: index_notice
       label: 首页公告
       type: textarea
       default: '欢迎来到我的博客'
+    index_post_img:
+      name: index_post_img
+      label: 主页文章默认封面图
+      type: text
+      placeholder: '图片URL, 留空则使用默认'
+    auto_hide_nav:
+      name: auto_hide_nav
+      label: 自动隐藏导航条
+      type: radio
+      data-type: bool
+      default: false
+      options:
+        - value: true
+          label: 开启
+        - value: false
+          label: 关闭
+      description: '首页与手机浏览时不会自动隐藏'
+social:
+  label: 社交信息设置
+  items:
+    social_qq_number:
+      name: social_qq_number
+      label: QQ号码
+      type: text
+      default: '10001'
+    social_github_id:
+      name: social_github_id
+      label: Github Id
+      type: text
+      default: 'halo-dev'
+    social_mail:
+      name: social_mail
+      label: 邮箱
+      type: text
+      default: '10001@qq.com'
+index_cards:
+  label: 主页卡片设置
+  items:
+    enable_card_avatar:
+      name: enable_card_avatar
+      label: 博主信息
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 隐藏
+    enable_card_announce:
+      name: enable_card_announce
+      label: 公告
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 隐藏
+    enable_card_social:
+      name: enable_card_social
+      label: 分享 & 订阅
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 隐藏
+    enable_card_statistic:
+      name: enable_card_statistic
+      label: 统计数据
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 隐藏
+    enable_card_tags:
+      name: enable_card_tags
+      label: 标签云
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 隐藏
+    enable_card_category:
+      name: enable_card_category
+      label: 文章分类
+      type: radio
+      data-type: bool
+      default: true
+      options:
+        - value: true
+          label: 显示
+        - value: false
+          label: 隐藏
+page_post:
+  label: 文章页设置
+  items:
     post_in_center:
       name: post_in_center
-      label: 文章页布局
+      label: 页面布局
       type: radio
       data-type: bool
       default: false
@@ -18,3 +136,9 @@ genernal:
           label: 拥有最大宽度并居中
         - value: false
           label: 完全按百分比
+    post_img:
+      name: post_img
+      label: 文章页文章默认封面图
+      type: text
+      placeholder: '留空使用主页文章封面图'
+      description: '请填写图片 URL, 极其不建议使用较大尺寸图片, 否则会导致页面卡顿'

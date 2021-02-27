@@ -40,7 +40,12 @@
         <div class="post-content">
     </#if>
             <div class="card card-post">
-                <#assign postimg=theme_base+'/source/images/bg-cover.jpg'/>
+                <#if settings.index_post_img?? && settings.index_post_img!=''>
+                    <#assign postimg=settings.index_post_img/>
+                <#else>
+                    <#assign postimg=theme_base+'/source/images/bg-cover.jpg'/>
+                </#if>
+                <#if settings.post_img?? && settings.post_img!=''><#assign postimg=settings.post_img /></#if>
                 <#if post.thumbnail?? && post.thumbnail!=''><#assign postimg=post.thumbnail /></#if>
                 <div class="post-info" style="background-image: url('${postimg!}');">
                     <span class="post-tittle">${post.title!}</span>

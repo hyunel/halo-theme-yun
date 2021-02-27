@@ -297,7 +297,7 @@ $sidebar-width: 20%;
     }
 
     ul > li::before {
-        content: "• ";
+        content: "\2022\0020";
         color: #{'rgba(var(--theme-color), 0.8)'};
         font-weight: bold;
 
@@ -306,11 +306,11 @@ $sidebar-width: 20%;
     }
 
     ul > li > ul > li::before{
-        content: "○ ";
+        content: "\25CB\0020";
     }
 
     ul > li > ul > li > ul > li::before {
-        content: "■ ";
+        content: "\25A0\0020";
     }
         
     

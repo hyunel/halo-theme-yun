@@ -63,7 +63,7 @@ class yunNav {
             return;
         }
 
-        if(top > this.lastScroll && ('is_post' in window) && !window.is_mobile && scrollHeight > 200 && false) {
+        if(top > this.lastScroll && ('is_post' in window) && !window.is_mobile && scrollHeight > 200 && 'auto_hide_nav' in window) {
             this.container.addClass('hide');
         } else {
             this.container.removeClass('hide');
@@ -131,6 +131,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
         setTheme(e.target.value);
     });
 
+    if('default_theme' in window) {
+        $('.theme-color-picker .dot')[0].style['backgroundColor'] = default_theme;
+    }
+    
     $('.theme-color-picker .dot').click(function(e) {
         setTheme(e.target.style['backgroundColor']);
         toastr.success('主题色切换成功！');
