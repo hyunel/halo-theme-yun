@@ -5,7 +5,7 @@ function loadPost() {
         hljs.highlightBlock(block);
         const copyme = document.createElement('button');
         copyme.classList.add('copy');
-        copyme.innerHTML = '<svg class="icon" aria-hidden="true"><use xlink:href="#icon-mulu"></use></svg>'
+        copyme.innerHTML = '<svg class="icon" aria-hidden="true"><use xlink:href="#icon-fuzhi"></use></svg>'
         block.parentElement.insertBefore(copyme, block.parentElement.firstChild);
     });
 
