@@ -121,14 +121,14 @@
                 <div class="in-widget-content">
 
                     <p>分享</p>
-                    <a href="https://weibo.com" class="line-center" target="view_window">
+                    <a href="https://service.weibo.com/share/share.php?url=${blog_url}&title=%E6%88%91%E5%8F%91%E7%8E%B0%E4%BA%86%E4%B8%80%E4%B8%AA%E5%BE%88%E6%A3%92%E7%9A%84%E7%BD%91%E7%AB%99" class="line-center" target="view_window">
                         <svg class="icon" aria-hidden="true" style="color: #E3262A;">
                             <use xlink:href="#icon-weibo"></use>
                         </svg>
                         <span>分享本页到 微博</span>
                     </a>
 
-                    <a href="https://qzone.qq.com" class="line-center" target="view_window">
+                    <a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=${blog_url}&sharesource=qzone&title=%E7%BD%91%E7%AB%99%E5%88%86%E4%BA%AB&summary=%E6%88%91%E5%8F%91%E7%8E%B0%E4%BA%86%E4%B8%80%E4%B8%AA%E5%BE%88%E6%A3%92%E7%9A%84%E7%BD%91%E7%AB%99" class="line-center" target="view_window">
                         <svg class="icon" aria-hidden="true" style="color: #FECE00;">
                             <use xlink:href="#icon-qzone"></use>
                         </svg>
@@ -187,10 +187,6 @@
                         <div><@postTag method="count">${count!0}</@postTag></div>
                     </div>
                     <div class="num-block">
-                        <div>图片</div>
-                        <div><@photoTag method="count">${count!0}</@photoTag></div>
-                    </div>
-                    <div class="num-block">
                         <div>评论</div>
                         <div><@commentTag method="count">${count!0}</@commentTag></div>
                     </div>
@@ -203,8 +199,12 @@
                         <div><@tagTag method="count">${count!0}</@tagTag></div>
                     </div>
                     <div class="num-block">
-                        <div>访客</div>
-                        <div>123</div>
+                        <div>友链</div>
+                        <div><@linkTag method="count">${count!0}</@linkTag></div>
+                    </div>
+                    <div class="num-block">
+                        <div>图库</div>
+                        <div><@photoTag method="count">${count!0}</@photoTag></div>
                     </div>
                 </div>
 

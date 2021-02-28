@@ -34,7 +34,7 @@
         </div>
 
     </div>
-    <#if settings.post_in_center?? && settings.post_in_center>
+    <#if !settings.post_in_center?? || settings.post_in_center>
         <div class="page-content post-content">
     <#else>
         <div class="post-content">

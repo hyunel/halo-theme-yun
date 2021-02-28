@@ -130,12 +130,13 @@ page_post:
       label: 页面布局
       type: radio
       data-type: bool
-      default: false
+      default: true
       options:
         - value: true
           label: 拥有最大宽度并居中
         - value: false
           label: 完全按百分比
+      description: 注意：此选项只有文章宽度大于1000px有效
     post_img:
       name: post_img
       label: 文章页文章默认封面图
