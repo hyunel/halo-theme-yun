@@ -35,6 +35,18 @@ genernal:
         - value: false
           label: 关闭
       description: '首页与手机浏览时不会自动隐藏'
+    user_second_line:
+      name: user_second_line
+      label: 博主卡片第二行小字
+      type: text
+      default: 'Student'
+      placeholder: '留空不显示'
+    user_position:
+      name: user_position
+      label: 博主卡片现居位置
+      type: text
+      default: 'Henan China'
+      placeholder: '留空不显示'
 social:
   label: 社交信息设置
   items:

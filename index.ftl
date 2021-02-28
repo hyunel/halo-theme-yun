@@ -89,13 +89,16 @@
             <div class="card card-widget widget-avatar auto-hide">
                 <img src="${user.avatar!}" alt="avatar">
                 <p>${user.nickname!}</p>
-                <p>Student</p>
+            <#if settings.user_second_line??>
+                <p>${settings.user_second_line}</p>
+            </#if><#if settings.user_position??>
                 <p>
                     <svg class="icon color-theme" aria-hidden="true">
                         <use xlink:href="#icon-Frame1"></use>
                     </svg>
-                    Henan China
+                    ${settings.user_position}
                 </p>
+            </#if>
             </div>
 </#if><#if !settings.enable_card_announce?? || settings.enable_card_announce>
             <div class="card card-widget widget-announce">
