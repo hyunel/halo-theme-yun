@@ -10,9 +10,8 @@ window['toTop'] = toTop;
 window['yunScrollTo'] = yunScrollTo;
 
 toastr['options'] = {
-    "closeButton": false,
     "positionClass": "toast-bottom-center",
-    "timeOut": "1000",
+    "timeOut": "1000"
 }
 
 class yunNav {
