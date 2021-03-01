@@ -1,6 +1,6 @@
 (function(){
     var setProp = function(...p){document.documentElement.style.setProperty(...p)};
-    setProp('--vh', window.innerHeight+'px');
+    // setProp('--vh', window.innerHeight+'px');
     if(localStorage.getItem("nightMode")==='true') setProp('data-theme', 'dark');
     var themeColor = localStorage.getItem("themeColor");
     if(themeColor!=undefined) {

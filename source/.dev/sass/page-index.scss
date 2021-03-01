@@ -115,8 +115,9 @@ $cover-height: var(--vh);
 
         position: absolute;
 
-        bottom: 0;
-        left: 0;
+        left: calc(50vw - 150px);
+        bottom: calc(50vh - 24px);
+
         // bottom: calc(#{$cover-height}/2 + 10px);
 
         will-change: bottom, left, font-size, font-weight, letter-spacing;

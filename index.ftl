@@ -23,6 +23,7 @@
                     
                     <#if post.thumbnail?? && post.thumbnail!=''><#assign postimg=post.thumbnail /></#if>
 
+                    <#--  <#assign postimg='#'/>  -->
                     <a href="${post.fullPath!}"><img src="${postimg!}" alt="bg"></a>
                     <div class="in-card">
                         <a class="in-card-tittle" href="${post.fullPath!}"><h3>${post.title!}</h3></a>

@@ -20,6 +20,7 @@ class yunCover {
             history.scrollRestoration = 'manual';
         }
 
+        this.lastProcess = 0;
         this.cover_tittle = $('.cover-tittle');
         this.initRect = this.cover_tittle[0].getBoundingClientRect();
         this.initFontSize = this.cover_tittle.css('font-size');
@@ -64,7 +65,8 @@ class yunCover {
     };
 
     onProcess(process) {
-        this.anime.seek(this.anime.duration * process);
+        if(this.lastProcess === 1 && process===1) return;
+        
         if(process===1) {
             this.cover_tittle.hide();
             $('.navbar-logo').show();
@@ -72,6 +74,9 @@ class yunCover {
             this.cover_tittle.show();
             $('.navbar-logo').hide();
         }
+        
+        this.anime.seek(this.anime.duration * process);
+        this.lastProcess = process;
     }
 
 }
