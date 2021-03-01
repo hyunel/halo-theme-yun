@@ -7,10 +7,7 @@
         </div>
         
         <div class="footer_text">
-            © 2021 Hyun
+            © ${.now?string('yyyy')} ${user.nickname!}<#if settings.icp_beian??> | <a href="https://beian.miit.gov.cn/" target="_blank">${settings.icp_beian}</a></#if>
         </div>
 
 </footer>
-
-
-

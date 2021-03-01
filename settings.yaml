@@ -47,6 +47,11 @@ genernal:
       type: text
       default: 'Henan China'
       placeholder: '留空不显示'
+    icp_beian:
+      name: icp_beian
+      label: ICP备案号
+      type: text
+      placeholder: '留空不显示'
 social:
   label: 社交信息设置
   items:
