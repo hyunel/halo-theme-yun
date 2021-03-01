@@ -26,6 +26,14 @@ $cover-height: var(--vh);
         box-shadow: 0 0 5px black;
         opacity: 0.9;
 
+        .navbar-logo {
+            display: block !important;
+        }
+
+        .cover-tittle {
+            display: none !important;
+        }
+
         @media (max-width: 640px) {
             .navbar {
 
@@ -141,6 +149,7 @@ $cover-height: var(--vh);
         
         .navbar-logo {
             float: left;
+            display: none;
             
             a {
                 display: inline-block;
