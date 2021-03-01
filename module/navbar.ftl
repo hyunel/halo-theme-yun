@@ -1,5 +1,5 @@
 <nav class="navbar">
-    <div class="navbar-logo">
+    <div style="display: none;" class="navbar-logo">
         <a href="${context!}">${blog_title!}</a>
     </div>
     
